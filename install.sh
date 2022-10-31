@@ -20,8 +20,8 @@ install_chromedriver() {
             "wget -N \
             http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
             -P ." \
-            "unzip chromedriver_linux64.zip -d ./chromedriver/" \
-            "rm -rf chromedriver_linux64.zip"
+            "unzip chromedriver_linux64.zip -d ./chromedriver/ \
+            && rm -rf chromedriver_linux64.zip"
             
     else
         echo "chromedriver_version does not match the google-chrome_version"
