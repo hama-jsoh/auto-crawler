@@ -9,6 +9,14 @@ print_in_red() {
     print_in_color "$1" 1
 }
 
+print_in_green() {
+    print_in_color "$1" 2
+}
+
+print_success() {
+    print_in_green "   [✔] $1\n"
+}
+
 print_error() {
     print_in_red "   [✖] $1 $2\n"
 }
