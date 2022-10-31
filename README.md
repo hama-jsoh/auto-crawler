@@ -1,5 +1,10 @@
 # auto_crawler
-Google, Naver, pinterest, instagram, flickr multiprocess image web crawler (Selenium)
+multiprocess image web crawler (Selenium)
+- Google
+- Naver
+- Pinterest
+- Instagram
+- Flickr
 
 ## Install
 - 구글 크롬 설치(latest_ver)
