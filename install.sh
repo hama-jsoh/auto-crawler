@@ -8,11 +8,29 @@ CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEA
 VERSION=${CHROME_VERSION:0:3}
 DRIVER_VERSION=${CHROME_DRIVER_VERSION:0:3}
 
-# install chromedriver
-if [[ $VERSION -eq $DRIVER_VERSION ]]
-then
-    wget -N http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip -P .
-    unzip chromedriver_linux64.zip -d ./chromedriver/
-else
-    echo "chromedriver_version does not match the google-chrome_version"
-fi
+install_chromedriver() {
+
+    # install chromedriver
+    if [[ $VERSION -eq $DRIVER_VERSION ]]; then
+    
+        execute \
+            "wget -N \
+            http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip \
+            -P ." \
+            "unzip chromedriver_linux64.zip -d ./chromedriver/"
+            
+    else
+        echo "chromedriver_version does not match the google-chrome_version"
+        
+    fi
+    
+}
+
+
+main() {
+
+    install_chromedriver
+
+}
+
+main
