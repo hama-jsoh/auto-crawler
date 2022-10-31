@@ -39,6 +39,17 @@ print_result() {
 
 }
 
+kill_all_subprocesses() {
+
+    local i=""
+
+    for i in $(jobs -p); do
+        kill "$i"
+        wait "$i" &> /dev/null
+    done
+
+}
+
 show_spinner() {
 
     local -r FRAMES='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
